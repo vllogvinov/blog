@@ -14,17 +14,17 @@
 	<% end %>
 
 	<p>
-		<%= form.label :title %>
+		<%= form.label :title, 'Название' %>
 		<%= form.text_field :title %>
 	</p>
 
 	<p>
-    	<%= form.label :text %><br>
+    	<%= form.label :text, 'Текст' %><br>
     	<%= form.text_area :text %>
   	</p>
 
   	<p>
-    	<%= form.submit 'Save' %>
+    	<%= form.submit 'Сохранить' %>
   	</p>
 
 <% end %>
