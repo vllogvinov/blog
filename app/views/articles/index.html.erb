@@ -1,5 +1,4 @@
 <h1>Все статьи</h1>
-
 <%= link_to 'Новая статья', new_article_path %>
 <table>
 	<tr>
@@ -13,10 +12,12 @@
 			<td><%= article.title %></td>
 			<td><%= article.text %></td>
 			<td><%= link_to 'Смотреть', article_path(article) %></td>
-			<td><%= link_to 'Изменить', edit_article_path(article) %></td> 
-			<td><%= link_to 'Удалить', article_path(article),
-					method: :delete,
+			<% if user_signed_in? %>
+				<td><%= link_to 'Изменить', edit_article_path(article) %></td> 
+				<td><%= link_to 'Удалить', article_path(article),
+						method: :delete,
 					data: {confirm: 'Вы уверены?'} %></td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>
